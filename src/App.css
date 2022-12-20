@@ -1,38 +1,236 @@
+* {
+  margin: 0;
+}
+body {
+  margin: 0;
+  background-color: #80afcd;
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  line-height: 1.4;
+ }
 .App {
   text-align: center;
 }
+.listNFTs ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+.listNFTs ul li {
+  margin: 15px;
+}
 
-.App-logo {
-  height: 40vmin;
+/* CARD */
+.card {
+ background-repeat: no-repeat;
+ background-position: top;
+ background-size: contain;
+ height: 350px;
+ position: relative;
+ box-shadow: 0 0 50px rgba(0, 0, 0, 0.315);
+}
+.card .container__info {
+  background-color: #334454;
+  padding: 5px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  color: #fff;
+}  
+.card .container__info span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card .container__info span img {
+   height: 25px;
+}
+.card .container__profile {
+  position: absolute;
+  right: 0;
+  left: 0;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  bottom: 0;
+}
+.card .container__profile img {
+   width: 40px;
+   height: 40px;
+   border-radius: 50%;
+   object-position: center;
+   object-fit: cover;
+   margin-right: 10px;
+}
+.card .container__profile h2 {
+   color: #334454;
+   font-size: 0.8rem;
+}
+.card .container__profile p {
+   color: #a1b2bc;
+   font-size: 0.6rem;
+}
+.card .container__profile p b {
+   font-style: italic;
+}
+
+/* INPUT */
+.text-center{
+	color:#fff;
+  display: block;
+  text-align: center;
+}
+form {
+  background-color: rgba(0, 0, 0, 0.89);
+	padding:10px 10px;
+}
+.input-container{
+	position:relative;
+	margin-bottom:25px;
+}
+.input-container label{
+	position:absolute;
+	top:0px;
+	left:0px;
+	font-size:16px;
+	color:#fff;	
   pointer-events: none;
+	transition: all 0.5s ease-in-out;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.input-container input{ 
+  border:0;
+  border-bottom:1px solid #555;  
+  background:transparent;
+  width:100%;
+  padding:8px 0 5px 0;
+  font-size:16px;
+  color:#fff;
 }
+.input-container input:focus{ 
+ border:none;	
+ outline:none;
+ border-bottom:1px solid #80afcd;	
+}
+.input-container input:focus ~ label,
+.input-container input:valid ~ label{
+	top:-12px;
+	font-size:12px;
+}
+	
+/* NAVIGATION */
+nav {
+  background: #80afcd;
+  color: #fff;
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+}
+nav ul {
+  display: flex;
+  float: right;
+  list-style: none;
+  padding: 20px 10px;
+  margin: 0;
+}
+nav li {
+  font-size: 10px;
+  margin: 1px;
+  float: left;
+}
+nav .navlist {
+  font-size: 0.9em;
+  color: #fff;
+  color: rgba(44, 44, 224, 0.579);
+  text-decoration: none;
+  margin: 1px 0 0 15px;
+  display: block;
+}
+nav a:hover {
+  color: #ededed;
+}
+.logo {
+  height: 55px;
+  float: left;
+}
+.logo:before, .logo:after {
+  position: absolute;
+  font-size: 4em;
+  font-weight: 200;
+  line-height: 0;
+  color: #fff;
+  top: 20px;
+}
+.logo:before {
+  content: '\00BB';
+  left: 10px;
+}
+.logo:after {
+  content: '\00AB';
+  left: 20px;
+}
+/* HOME */
+.home h1 {
+  padding-top: 75px;
+  text-align: center;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+}
+/* COLLECTIONS */
+.collections h1 {
+  padding-top: 75px;
+  text-align: center;
+
+}
+/* SEARCH WALLET */
+.searchWallet {
+  padding-top: 75px;
+
+}
+/* PREDICT PAGE */
+.predict_page {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.predict_page .presentation h3{
+  color: #fff;
+  text-align: center;
+  padding-top: 75px;
+  margin-bottom: 10px;
 }
+.predict_page .presentation p {
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 10px;
+  color: #fff;
+}
+.predict_page .presentation p span {
+  font-weight: bold;
+}
+.predict_page .input {
+  margin-bottom: 10px;
+}
+.predict_page .input label {
+  font-weight: 700;
+  color: #fff;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+}
+.predict_page .card .nft {
+  background-color: #fff;
+  height: 300px;
+  width: 300px;
+}
+.predict_page .prediction {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #fff;
+  width: 300px;
+  margin: 10px;
+  border: 1px solid black;
+}
+.predict_page .card .container__profile button{
+  margin-left: 80px;
 }
